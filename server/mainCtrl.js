@@ -5,7 +5,7 @@ module.exports = {
       if(req.body.userName && req.body.password){
         if(service.login(req.body.userName,req.body.password)){
           req.session.currentUser = service.getCurrentUser();
-          console.log(req.session.currentUser);
+          // console.log(req.session.currentUser);
           res.status(200).send({userFound: true});
         }else{
           res.status(400).send({userFound: false});

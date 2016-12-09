@@ -4,13 +4,12 @@ module.exports = {
     // console.log(data.users);
     // console.log(userName,password);
     for(var i = 0; i < data.users.length; i++){
-      if(data.users[i].name === userName && data.users[i].password === password){
+      if(data.users[i].name == userName && data.users[i].password === password){
         data.currentUser = data.users[i];
         return true;
-      }else{
-        return false;
       }
     }
+    return false;
   },
   getCurrentUser: function(){
     return data.currentUser;

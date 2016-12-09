@@ -22,7 +22,6 @@ app.use(session({
   saveUninitialized: true
 }));
 app.post('/api/login',mainCtrl.login);
-console.log(mainCtrl.login);
 
 app.listen(config.port, function(){
   console.log("listening to port ",config.port);
