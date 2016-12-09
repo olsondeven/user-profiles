@@ -2,14 +2,16 @@
 var service = require('./service.js');
 module.exports = {
   login: function(req,res,next){
-    console.log(req.body.userName,req.body.password);
-
-      if(service.login(req.body.userName,req.body.password)){
-        req.session.currentUser = service.getCurrentUser();
-        res.status(200).send({userFound: true});
+      if(req.body.userName && req.body.password){
+        if(service.login(req.body.userName,req.body.password)){
+          req.session.currentUser = service.getCurrentUser();
+          console.log(req.session.currentUser);
+          res.status(200).send({userFound: true});
+        }else{
+          res.status(400).send({userFound: false});
+        }
       }else{
-        res.status(200).send({useFound: false});
+        res.status(400).send('incorrect Password');
       }
-
   }
 };

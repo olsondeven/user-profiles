@@ -1,4 +1,10 @@
+var currentUser = null;
 var users = [
+  {
+    name: 'hello313',
+    password: 'world',
+    friends: ['Lindsey Mayer', 'Terri Ruff']
+  },
   {
     name: 'Preston McNeil',
     password: 'password1',
