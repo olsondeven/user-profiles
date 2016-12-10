@@ -21,7 +21,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-app.post('/api/login',mainCtrl.login);
+app.get('/api/profiles',mainCtrl.getProfiles);
+app.post('/api/login',mainCtrl.postLogin);
+
 
 app.listen(config.port, function(){
   console.log("listening to port ",config.port);

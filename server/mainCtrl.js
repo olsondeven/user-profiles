@@ -1,7 +1,7 @@
 // var data = require('./data.js');
 var service = require('./service.js');
 module.exports = {
-  login: function(req,res,next){
+  postLogin: function(req,res,next){
       if(req.body.userName && req.body.password){
         if(service.login(req.body.userName,req.body.password)){
           req.session.currentUser = service.getCurrentUser();
@@ -15,11 +15,15 @@ module.exports = {
       }
   },
   getProfiles: function(req,res,next){
+    console.log(req.session.currentUser);
     if(req.session.currentUser){
       res.status(200).send({
         currentUser: req.session.currentUser,
         friends: service.getFriendProfiles(req.session.currentUser)
       });
+      console.log(service.getFriendProfiles(req.session.currentUser));
+    }else{
+      res.status(400).send('please login');
     }
-  };
+  }
 };

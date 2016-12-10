@@ -5,7 +5,7 @@ module.exports = {
     // console.log(userName,password);
     for(var i = 0; i < data.users.length; i++){
       if(data.users[i].name == userName && data.users[i].password === password){
-        data.currentUser = data.users[i];
+        data.currentUser = data.users[i].name;
         return true;
       }
     }
