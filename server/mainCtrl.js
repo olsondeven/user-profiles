@@ -13,5 +13,13 @@ module.exports = {
       }else{
         res.status(400).send('incorrect Password');
       }
-  }
+  },
+  getProfiles: function(req,res,next){
+    if(req.session.currentUser){
+      res.status(200).send({
+        currentUser: req.session.currentUser,
+        friends: service.getFriendProfiles(req.session.currentUser)
+      });
+    }
+  };
 };

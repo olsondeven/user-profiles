@@ -13,5 +13,17 @@ module.exports = {
   },
   getCurrentUser: function(){
     return data.currentUser;
+  },
+  getFriendProfiles: function(currentUser){
+    var arr = [];
+    currentUser.friends.forEach(function(name,i){
+      data.profiles.forEach(function(obj,j){
+        if(name === obj.name){
+          console.log(obj);
+          arr.push(obj);
+        }
+      });
+    });
+    return arr;
   }
 };
