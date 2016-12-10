@@ -2,6 +2,7 @@
 var service = require('./service.js');
 module.exports = {
   postLogin: function(req,res,next){
+    console.log(req.body);
       if(req.body.userName && req.body.password){
         if(service.login(req.body.userName,req.body.password)){
           req.session.currentUser = service.getCurrentUser();
@@ -15,7 +16,7 @@ module.exports = {
       }
   },
   getProfiles: function(req,res,next){
-    console.log(req.session.currentUser);
+    console.log('current user ',req.session.currentUser);
     if(req.session.currentUser){
       res.status(200).send({
         currentUser: req.session.currentUser,

@@ -29,7 +29,7 @@ var users = [
 var profiles = [
   {
     name: 'hello313',
-    pic: 'world',
+    pic: 'http://vignette2.wikia.nocookie.net/animal-jam-clans-1/images/c/c9/CAT-GIF-Amazing-Cat-holds-and-licks-a-delicious-lollipop-1-2.gif/revision/latest?cb=20160616192127',
     friends: ['Lindsey Mayer', 'Terri Ruff']
   },
   {

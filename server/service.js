@@ -5,7 +5,15 @@ module.exports = {
     // console.log(userName,password);
     for(var i = 0; i < data.users.length; i++){
       if(data.users[i].name == userName && data.users[i].password === password){
-        data.currentUser = data.users[i].name;
+        function addPic(name) {
+            data.profiles.forEach(function(element, index) {
+                if (element.name === name) {
+                    data.currentUser.pic = data.profiles[index].pic;
+                }
+            });
+        }
+        data.currentUser = data.users[i];
+        addPic(data.users[i].name);
         return true;
       }
     }
@@ -19,7 +27,6 @@ module.exports = {
     currentUser.friends.forEach(function(name,i){
       data.profiles.forEach(function(obj,j){
         if(name === obj.name){
-          console.log(obj);
           arr.push(obj);
         }
       });
