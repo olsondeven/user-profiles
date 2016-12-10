@@ -28,6 +28,11 @@ var users = [
 ];
 var profiles = [
   {
+    name: 'hello313',
+    pic: 'world',
+    friends: ['Lindsey Mayer', 'Terri Ruff']
+  },
+  {
     name: 'Preston McNeil',
     pic: 'https://s3.amazonaws.com/uifaces/faces/twitter/ashleyford/128.jpg',
     status: 'Everything is bigger in Texas'
